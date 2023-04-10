@@ -10,6 +10,7 @@
         <Frame Name="MainFrame" Background="White" Margin="0,46,0,68" NavigationUIVisibility="Hidden"/>
         <Button Name="Close" Content="Выход" HorizontalAlignment="Left" Margin="77,0,0,18" VerticalAlignment="Bottom" Width="205" FontFamily="Comic Sans MS" FontSize="24" Click="Close_Click"/>
         <Button Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="532,0,0,18" VerticalAlignment="Bottom" Width="205" FontFamily="Comic Sans MS" FontSize="24" Click="Back_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="168,24,0,0" VerticalAlignment="Top" Width="76"/>
 
     </Grid>
 </Window>
