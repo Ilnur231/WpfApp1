@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WpfApp1.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +65,42 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Izgotoviteli.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kategoria.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pokypateli.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sotrydniki.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tovary.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zakazy.cs">
+      <DependentUpon>Bd.tt</DependentUpon>
+    </Compile>
+    <Page Include="Autor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,10 +109,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Autor.xaml.cs">
+      <DependentUpon>Autor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bd.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bd.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bd.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Page1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,6 +149,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Bd.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Bd.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Bd.edmx.diagram">
+      <DependentUpon>Bd.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +164,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="NewFolder1\C346F5.jpg" />
+    <Resource Include="NewFolder1\D325D4.jpg" />
+    <Resource Include="NewFolder1\F256G6.jpg" />
+    <Resource Include="NewFolder1\F325D4.jpg" />
+    <Resource Include="NewFolder1\G432G6.jpg" />
+    <Resource Include="NewFolder1\G843H5.jpg" />
+    <Resource Include="NewFolder1\H542F5.jpg" />
+    <Resource Include="NewFolder1\J532V5.jpg" />
+    <Resource Include="NewFolder1\S432T5.jpg" />
+    <Resource Include="NewFolder1\А112Т4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bd.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Bd.edmx</DependentUpon>
+      <LastGenOutput>Bd.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Bd.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Bd.edmx</DependentUpon>
+      <LastGenOutput>Bd.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

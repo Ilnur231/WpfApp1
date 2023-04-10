@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="228,117,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="MainWindow" Height="700" Width="800" >
+    <Grid Background="#FF80FF00">
+        <Frame Name="MainFrame" Background="White" Margin="0,46,0,68" NavigationUIVisibility="Hidden"/>
+        <Button Name="Close" Content="Выход" HorizontalAlignment="Left" Margin="77,0,0,18" VerticalAlignment="Bottom" Width="205" FontFamily="Comic Sans MS" FontSize="24" Click="Close_Click"/>
+        <Button Name="Back" Content="Назад" HorizontalAlignment="Left" Margin="532,0,0,18" VerticalAlignment="Bottom" Width="205" FontFamily="Comic Sans MS" FontSize="24" Click="Back_Click"/>
 
     </Grid>
 </Window>
